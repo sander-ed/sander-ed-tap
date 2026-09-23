@@ -1,7 +1,7 @@
 class Gnosis < Formula
   desc "Git-backed OKF package manager"
   homepage "https://github.com/sander-ed/gnosis"
-  url "ssh://git@github.com/sander-ed/gnosis.git",
+  url "https://github.com/sander-ed/gnosis.git",
       tag:      "v0.1.0",
       revision: "0418415c11cd89af1bfdbf0953bd58e55653d22c"
 
