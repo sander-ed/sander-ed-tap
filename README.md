@@ -44,3 +44,28 @@ The installed tap checkout is located at `brew --repository sander-ed/tap`.
 Make release edits there, or copy the changed formula there before testing.
 Release updates are manual; pushing application changes alone does not upgrade
 the Homebrew package.
+
+## Troubleshooting
+
+If `gnosis` still runs an older Cargo installation, check `which gnosis`.
+`~/.cargo/bin/gnosis` may precede Homebrew in your `PATH`. The Homebrew binary is
+`$(brew --prefix)/bin/gnosis`; adjust your `PATH` if you want it to take precedence.
+
+On managed networks, Cargo may report a self-signed certificate in the chain.
+Use a PEM CA bundle containing your organization's trusted root certificates
+and the standard public roots, obtained from your administrator. Do not disable
+TLS verification. Homebrew 7 filters ordinary environment variables, so pass
+the bundle into the build process explicitly:
+
+```sh
+HOMEBREW_GNOSIS_CA_BUNDLE=/absolute/path/to/trusted-ca-bundle.pem \
+  brew ruby -e '
+    ENV["CARGO_HTTP_CAINFO"] = ENV.fetch("HOMEBREW_GNOSIS_CA_BUNDLE")
+    exec "/bin/bash", "#{HOMEBREW_LIBRARY}/Homebrew/brew.sh",
+         "install", "sander-ed/tap/gnosis"
+  '
+```
+
+Use `"upgrade"` instead of `"install"` for subsequent upgrades on that network.
+This setting applies only to that command; it does not change system trust or
+store certificates in the formula.
