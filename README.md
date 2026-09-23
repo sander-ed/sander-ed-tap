@@ -28,22 +28,23 @@ brew upgrade sander-ed/tap/gnosis
 
 ## Publish a new version
 
-1. Bump `version` in the Gnosis `Cargo.toml`, refresh `Cargo.lock` with Cargo,
-   run `cargo test --locked`, and commit and push the changes.
-2. Tag that source commit as `vVERSION` and push the tag to `sander-ed/gnosis`.
-   Do not move existing release tags.
-3. Update `tag` and `revision` in `Formula/gnosis.rb` to the new tag and its full
-   commit SHA (`git rev-parse vVERSION^{commit}` in the source checkout).
-4. In a checkout of this tap, run `brew style Formula/gnosis.rb`. Install the
-   updated formula with `brew reinstall --build-from-source sander-ed/tap/gnosis`
-   from the local Homebrew tap checkout, then run `brew test sander-ed/tap/gnosis`.
-5. Commit and push the formula change. Users receive it through `brew update`
-   and `brew upgrade`.
+Bump `[package].version` in the Gnosis `Cargo.toml`, refresh `Cargo.lock` with
+Cargo, and push to the source repository's `main` branch.
 
-The installed tap checkout is located at `brew --repository sander-ed/tap`.
-Make release edits there, or copy the changed formula there before testing.
-Release updates are manual; pushing application changes alone does not upgrade
-the Homebrew package.
+The source repository's **Update Homebrew tap** GitHub Actions workflow checks
+each push. If the version differs from the formula, it tests and builds the
+release commit, creates a `vVERSION` tag, and commits the updated `tag` and
+`revision` to this tap. Unchanged versions are skipped. Users receive releases
+through `brew update` and `brew upgrade`.
+
+To retry a failed publication, run the workflow manually in
+[`sander-ed/gnosis`](https://github.com/sander-ed/gnosis/actions/workflows/homebrew.yml).
+Existing tags are reused, never moved. Queued runs use the latest source `main`
+to avoid publishing stale versions.
+
+The workflow authenticates with a dedicated write-enabled deploy key on this
+tap, stored as the source repository's `HOMEBREW_TAP_DEPLOY_KEY` Actions secret.
+If rotating it, replace both the deploy key here and that secret.
 
 ## Troubleshooting
 
