@@ -8,14 +8,19 @@ Install [Gnosis](https://github.com/sander-ed/gnosis) on macOS or Linux with
 [Homebrew](https://brew.sh):
 
 ```sh
+brew tap sander-ed/tap https://github.com/sander-ed/sander-ed-tap.git
 brew install sander-ed/tap/gnosis
 gnosis --help
 ```
 
-Homebrew adds this public tap automatically. The formula builds from the public
-source repository over HTTPS, pinned to a version tag and commit. Homebrew
-installs Rust for the build and Git for runtime use. No GitHub account, token,
-or SSH key is required, and this tap does not provide prebuilt binaries.
+The explicit tap URL is needed because this repository is named `sander-ed-tap`
+rather than Homebrew's conventional `homebrew-tap`. The local tap name remains
+`sander-ed/tap`.
+
+The formula builds from the public source repository over HTTPS, pinned to a
+version tag and commit. Homebrew installs Rust for the build and Git for runtime
+use. No GitHub account, token, or SSH key is required, and this tap does not
+provide prebuilt binaries.
 
 ## Upgrade
 
@@ -46,12 +51,13 @@ If rotating it, replace both the deploy key here and that secret.
 
 ## Troubleshooting
 
-If you installed the tap while it was private, switch its SSH remote to HTTPS
-so future updates do not need GitHub authentication:
+If you installed the tap before it became public or was renamed, switch its
+remote to the current HTTPS URL so updates do not need GitHub authentication
+or rely on the old repository redirect:
 
 ```sh
 git -C "$(brew --repository sander-ed/tap)" remote set-url origin \
-  https://github.com/sander-ed/homebrew-tap.git
+  https://github.com/sander-ed/sander-ed-tap.git
 ```
 
 If `gnosis` still runs an older Cargo installation, check `which gnosis`.
