@@ -2,8 +2,8 @@ class Gnosis < Formula
   desc "Git-backed OKF package manager"
   homepage "https://github.com/sander-ed/gnosis"
   url "https://github.com/sander-ed/gnosis.git",
-      tag:      "v0.2.0",
-      revision: "438f6c2f36610514266ca72506cb1d83e26a715d"
+      tag:      "v0.3.0",
+      revision: "964c69dd2f01d3a5d2cf91296887cd24b6f0cf95"
 
   depends_on "rust" => :build
   depends_on "git"
