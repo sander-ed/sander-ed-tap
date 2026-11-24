@@ -3,28 +3,28 @@
 class Pear < Formula
   desc "Tiny session manager: keep a terminal program running independently of SSH"
   homepage "https://github.com/sander-ed/pear"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/sander-ed/pear/releases/download/v0.1.0/pear-0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "d4f9aff02b9abb16d4c53c381cfe5b702a752de473a4d9c80c2b9f9356e3dfdb"
+      url "https://github.com/sander-ed/pear/releases/download/v0.2.0/pear-0.2.0-aarch64-apple-darwin.tar.gz"
+      sha256 "f4e9bd269a788336c765d7836fbd9eb7367f84665052b592a44831f537972af8"
     end
     on_intel do
-      url "https://github.com/sander-ed/pear/releases/download/v0.1.0/pear-0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "9fafe042c5b5f03e8fcbe82bc1f1c311e8bd30e703d3c9926d558eec6860fc8a"
+      url "https://github.com/sander-ed/pear/releases/download/v0.2.0/pear-0.2.0-x86_64-apple-darwin.tar.gz"
+      sha256 "d5763a5e1f2ad0f35bce57050e55bbee2ba343fae9f93fe528f7c36094f7070b"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/sander-ed/pear/releases/download/v0.1.0/pear-0.1.0-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "b63ea43c0e531b924d93312daabb3b3e072897ac413e027b28f36f8bda825fc9"
+      url "https://github.com/sander-ed/pear/releases/download/v0.2.0/pear-0.2.0-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "ec65c13850bbe13b73eda8888d11ae9b0565b634c78c9aad26cfb4e4b64b72e3"
     end
     on_intel do
-      url "https://github.com/sander-ed/pear/releases/download/v0.1.0/pear-0.1.0-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "fa270a8d9ee6697100ce190359dfb78dd6987d8f39cee7ed2c3d7f324d9c9788"
+      url "https://github.com/sander-ed/pear/releases/download/v0.2.0/pear-0.2.0-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "3de945f2277debb51eb20e81788092a0858fb7eccf71b9431995d2b949ead2ec"
     end
   end
 
