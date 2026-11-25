@@ -3,28 +3,28 @@
 class Gnosis < Formula
   desc "Git-backed OKF package manager"
   homepage "https://github.com/sander-ed/gnosis"
-  version "0.3.2"
+  version "0.3.3"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/sander-ed/gnosis/releases/download/v0.3.2/gnosis-0.3.2-aarch64-apple-darwin.tar.gz"
-      sha256 "d5e269c2f61de9e48528f2db5fbf1311de5175a6e24c7a33f2a9bcc92fa036e9"
+      url "https://github.com/sander-ed/gnosis/releases/download/v0.3.3/gnosis-0.3.3-aarch64-apple-darwin.tar.gz"
+      sha256 "28e519fab2d8c3466e757a6f3c8e071505539881eeec7fd62410c2049b844de8"
     end
     on_intel do
-      url "https://github.com/sander-ed/gnosis/releases/download/v0.3.2/gnosis-0.3.2-x86_64-apple-darwin.tar.gz"
-      sha256 "e7fcbb3f02c59f89664f888fcde51a6d230350b1632d94e3b6e5029422f3ea95"
+      url "https://github.com/sander-ed/gnosis/releases/download/v0.3.3/gnosis-0.3.3-x86_64-apple-darwin.tar.gz"
+      sha256 "ef3087ebc1ce6817a965521e93e1e47e9e129ada0b51b74ae21fb9b101596c2c"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/sander-ed/gnosis/releases/download/v0.3.2/gnosis-0.3.2-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "3340a13c5527f42ded4c0efbf1b7c4eb18906405b57055d5c0c79807151887c4"
+      url "https://github.com/sander-ed/gnosis/releases/download/v0.3.3/gnosis-0.3.3-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "689acb2c108e0c17d2ba575fbc4d58837cb5f325854981ce7d756b27bbc32836"
     end
     on_intel do
-      url "https://github.com/sander-ed/gnosis/releases/download/v0.3.2/gnosis-0.3.2-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "f9b6226ab2c9ff5bbf1b8489146dc620dc8545d7dd8513446896847035ffb151"
+      url "https://github.com/sander-ed/gnosis/releases/download/v0.3.3/gnosis-0.3.3-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "ecbcd5456a78b9bd6d6bde8f897b980bd9606fcca7129cbe781da0d982b00cd6"
     end
   end
 
